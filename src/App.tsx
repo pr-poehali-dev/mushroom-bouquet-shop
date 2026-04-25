@@ -64,21 +64,22 @@ export default function App() {
           {page === 'contacts' && <ContactsPage />}
           {page === 'delivery' && <DeliveryPage />}
         </main>
-        <footer className="bg-[hsl(10,15%,15%)] text-white py-12 mt-20">
+        {/* Footer — тёмный лесной */}
+        <footer className="bg-[hsl(130,25%,12%)] text-white py-12 mt-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-3xl">🍄</span>
-                  <span className="font-display text-2xl text-[hsl(350,60%,80%)]">Мухомор</span>
+                  <span className="font-display text-2xl text-[hsl(4,60%,72%)]">Мухомор</span>
                 </div>
-                <p className="text-sm text-white/60 leading-relaxed">
+                <p className="text-sm text-white/55 leading-relaxed">
                   Авторские букеты и цветы<br />в Калининграде с любовью
                 </p>
               </div>
               <div>
-                <h4 className="font-display text-lg text-[hsl(350,60%,80%)] mb-4">Навигация</h4>
-                <ul className="space-y-2 text-sm text-white/60">
+                <h4 className="font-display text-lg text-[hsl(120,25%,70%)] mb-4">Навигация</h4>
+                <ul className="space-y-2 text-sm text-white/55">
                   {(['home', 'catalog', 'about', 'delivery', 'contacts'] as Page[]).map(p => (
                     <li key={p}>
                       <button onClick={() => setPage(p)} className="hover:text-white transition-colors">
@@ -89,15 +90,15 @@ export default function App() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-display text-lg text-[hsl(350,60%,80%)] mb-4">Контакты</h4>
-                <ul className="space-y-2 text-sm text-white/60">
+                <h4 className="font-display text-lg text-[hsl(120,25%,70%)] mb-4">Контакты</h4>
+                <ul className="space-y-2 text-sm text-white/55">
                   <li>📍 Калининград</li>
                   <li>📞 +7 (4012) 000-000</li>
                   <li>🕐 Пн–Вс: 9:00–21:00</li>
                 </ul>
               </div>
             </div>
-            <div className="border-t border-white/10 mt-8 pt-6 text-center text-xs text-white/30">
+            <div className="border-t border-white/10 mt-8 pt-6 text-center text-xs text-white/25">
               © 2024 Мухомор. Все права защищены.
             </div>
           </div>

@@ -20,15 +20,12 @@ export default function Header({ currentPage, onNavigate, cartCount }: HeaderPro
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 nav-blur border-b border-[hsl(350,30%,90%)]">
+    <header className="sticky top-0 z-50 nav-blur border-b border-[hsl(100,15%,85%)]">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={() => onNavigate('home')}
-          className="flex items-center gap-2 group"
-        >
+        <button onClick={() => onNavigate('home')} className="flex items-center gap-2 group">
           <span className="text-2xl group-hover:animate-float transition-all">🍄</span>
-          <span className="font-display text-2xl font-semibold tracking-wide text-[hsl(355,65%,45%)]">
+          <span className="font-display text-2xl font-semibold tracking-wide text-[hsl(4,72%,45%)]">
             Мухомор
           </span>
         </button>
@@ -41,11 +38,11 @@ export default function Header({ currentPage, onNavigate, cartCount }: HeaderPro
               onClick={() => onNavigate(page)}
               className={`font-body text-sm font-medium transition-all duration-200 relative pb-0.5
                 ${currentPage === page
-                  ? 'text-[hsl(355,65%,50%)]'
-                  : 'text-foreground/70 hover:text-[hsl(355,65%,50%)]'
+                  ? 'text-[hsl(130,35%,28%)]'
+                  : 'text-foreground/65 hover:text-[hsl(130,35%,28%)]'
                 }
                 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 
-                after:bg-[hsl(355,65%,55%)] after:transition-all after:duration-300
+                after:bg-[hsl(4,72%,50%)] after:transition-all after:duration-300
                 ${currentPage === page ? 'after:w-full' : 'after:w-0 hover:after:w-full'}
               `}
             >
@@ -58,18 +55,18 @@ export default function Header({ currentPage, onNavigate, cartCount }: HeaderPro
         <div className="flex items-center gap-3">
           <button
             onClick={() => onNavigate('cart')}
-            className="relative p-2 rounded-full hover:bg-[hsl(350,50%,95%)] transition-colors group"
+            className="relative p-2 rounded-full hover:bg-[hsl(120,18%,90%)] transition-colors"
           >
-            <Icon name="ShoppingBag" size={22} className="text-[hsl(355,65%,50%)]" />
+            <Icon name="ShoppingBag" size={22} className="text-[hsl(4,72%,48%)]" />
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[hsl(355,65%,55%)] text-white text-xs rounded-full flex items-center justify-center font-body font-bold animate-scale-in">
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[hsl(4,72%,50%)] text-white text-xs rounded-full flex items-center justify-center font-body font-bold">
                 {cartCount}
               </span>
             )}
           </button>
 
           <button
-            className="md:hidden p-2 rounded-full hover:bg-[hsl(350,50%,95%)] transition-colors"
+            className="md:hidden p-2 rounded-full hover:bg-[hsl(120,18%,90%)] transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <Icon name={mobileOpen ? 'X' : 'Menu'} size={22} className="text-foreground/70" />
@@ -79,7 +76,7 @@ export default function Header({ currentPage, onNavigate, cartCount }: HeaderPro
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[hsl(350,30%,90%)] bg-white/95 backdrop-blur-md animate-fade-in">
+        <div className="md:hidden border-t border-[hsl(100,15%,85%)] bg-[hsl(40,25%,97%)]/95 backdrop-blur-md animate-fade-in">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
             {NAV_ITEMS.map(({ page, label }) => (
               <button
@@ -87,8 +84,8 @@ export default function Header({ currentPage, onNavigate, cartCount }: HeaderPro
                 onClick={() => { onNavigate(page); setMobileOpen(false); }}
                 className={`text-left px-4 py-3 rounded-xl font-body text-sm font-medium transition-all
                   ${currentPage === page
-                    ? 'bg-[hsl(350,50%,94%)] text-[hsl(355,65%,50%)]'
-                    : 'hover:bg-[hsl(350,50%,97%)] text-foreground/70'
+                    ? 'bg-[hsl(120,18%,88%)] text-[hsl(130,35%,28%)]'
+                    : 'hover:bg-[hsl(120,18%,93%)] text-foreground/70'
                   }`}
               >
                 {label}

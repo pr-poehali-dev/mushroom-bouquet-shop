@@ -14,10 +14,10 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-up">
-              <p className="font-body text-sm text-[hsl(355,65%,55%)] uppercase tracking-widest mb-4">О нас</p>
+              <p className="font-body text-sm text-[hsl(130,35%,30%)] uppercase tracking-widest mb-4">О нас</p>
               <h1 className="font-display text-5xl md:text-6xl font-light text-foreground leading-tight mb-6">
                 История<br />
-                <em className="text-[hsl(355,65%,55%)] not-italic">«Мухомора»</em>
+                <em className="text-[hsl(4,72%,50%)] not-italic">«Мухомора»</em>
               </h1>
               <p className="font-body text-base text-foreground/60 leading-relaxed mb-4">
                 Мы — маленький авторский цветочный магазин в сердце Калининграда, где каждый букет создаётся с искренней любовью к своему делу.
@@ -28,11 +28,11 @@ export default function AboutPage() {
             </div>
 
             <div className="relative animate-slide-up delay-200">
-              <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl shadow-[hsl(355,40%,60%)]/10">
+              <div className="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl shadow-[hsl(130,30%,15%)]/10">
                 <img src={SHOP_IMG} alt="Наш магазин" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl shadow-xl p-5 max-w-[180px]">
-                <div className="font-display text-3xl text-[hsl(355,65%,55%)] mb-1">2018</div>
+                <div className="font-display text-3xl text-[hsl(4,72%,50%)] mb-1">2018</div>
                 <div className="font-body text-xs text-foreground/55">год основания магазина</div>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
             { emoji: '🌱', title: 'Свежесть', text: 'Мы работаем только с проверенными поставщиками и получаем цветы каждое утро, чтобы ваш букет радовал как можно дольше.' },
             { emoji: '💛', title: 'Забота', text: 'Мы помним своих клиентов и их вкусы. Наш сервис — это не просто продажа, а настоящие отношения с каждым.' },
           ].map(({ emoji, title, text }) => (
-            <div key={title} className="bg-white border border-[hsl(350,30%,92%)] rounded-3xl p-8 hover-lift">
+            <div key={title} className="bg-white border border-[hsl(100,15%,86%)] rounded-3xl p-8 hover-lift">
               <div className="text-4xl mb-5">{emoji}</div>
               <h3 className="font-display text-2xl font-light text-foreground mb-3">{title}</h3>
               <p className="font-body text-sm text-foreground/60 leading-relaxed">{text}</p>
@@ -64,17 +64,17 @@ export default function AboutPage() {
       <section className="bg-mushroom-light py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
-            <p className="font-body text-sm text-[hsl(355,65%,55%)] uppercase tracking-widest mb-2">Люди</p>
+            <p className="font-body text-sm text-[hsl(130,35%,30%)] uppercase tracking-widest mb-2">Люди</p>
             <h2 className="font-display text-4xl md:text-5xl font-light text-foreground">Наша команда</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {TEAM.map(({ name, role, emoji, exp }) => (
-              <div key={name} className="bg-white rounded-3xl p-8 text-center border border-[hsl(350,30%,92%)] hover-lift">
-                <div className="w-20 h-20 bg-[hsl(350,50%,92%)] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
+              <div key={name} className="bg-white rounded-3xl p-8 text-center border border-[hsl(100,15%,86%)] hover-lift">
+                <div className="w-20 h-20 bg-[hsl(120,20%,88%)] rounded-full flex items-center justify-center mx-auto mb-5 text-3xl">
                   {emoji}
                 </div>
                 <h3 className="font-display text-xl font-light text-foreground mb-1">{name}</h3>
-                <p className="font-body text-sm text-[hsl(355,65%,55%)] font-medium mb-1">{role}</p>
+                <p className="font-body text-sm text-[hsl(4,72%,50%)] font-medium mb-1">{role}</p>
                 <p className="font-body text-xs text-foreground/40">{exp}</p>
               </div>
             ))}
@@ -91,8 +91,8 @@ export default function AboutPage() {
             { num: '4.9', label: 'средний рейтинг' },
             { num: '1000+', label: 'счастливых клиентов' },
           ].map(({ num, label }) => (
-            <div key={label} className="bg-white border border-[hsl(350,30%,92%)] rounded-2xl p-8">
-              <div className="font-display text-5xl font-light text-[hsl(355,65%,55%)] mb-2">{num}</div>
+            <div key={label} className="bg-white border border-[hsl(100,15%,86%)] rounded-2xl p-8">
+              <div className="font-display text-5xl font-light text-[hsl(4,72%,50%)] mb-2">{num}</div>
               <div className="font-body text-sm text-foreground/50">{label}</div>
             </div>
           ))}

@@ -39,10 +39,9 @@ export default function CatalogPage({ onAddToCart }: CatalogPageProps) {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="mb-10">
-        <p className="font-body text-sm text-[hsl(355,65%,55%)] uppercase tracking-widest mb-2">Наш ассортимент</p>
+        <p className="font-body text-sm text-[hsl(130,35%,30%)] uppercase tracking-widest mb-2">Наш ассортимент</p>
         <h1 className="font-display text-5xl font-light text-foreground mb-6">Каталог букетов</h1>
 
-        {/* Categories */}
         <div className="flex flex-wrap gap-2">
           {CATEGORIES.map(cat => (
             <button
@@ -50,8 +49,8 @@ export default function CatalogPage({ onAddToCart }: CatalogPageProps) {
               onClick={() => setActive(cat)}
               className={`font-body text-sm font-medium px-5 py-2 rounded-full transition-all duration-200
                 ${active === cat
-                  ? 'bg-[hsl(355,65%,55%)] text-white shadow-md shadow-[hsl(355,65%,55%)]/20'
-                  : 'bg-white border border-[hsl(350,30%,88%)] text-foreground/60 hover:border-[hsl(355,65%,70%)] hover:text-[hsl(355,65%,50%)]'
+                  ? 'bg-[hsl(4,72%,50%)] text-white shadow-md shadow-[hsl(4,72%,50%)]/20'
+                  : 'bg-white border border-[hsl(100,15%,85%)] text-foreground/60 hover:border-[hsl(130,35%,55%)] hover:text-[hsl(130,35%,28%)]'
                 }`}
             >
               {cat}
@@ -64,7 +63,7 @@ export default function CatalogPage({ onAddToCart }: CatalogPageProps) {
         {filtered.map((item, i) => (
           <div
             key={item.id}
-            className="group bg-white rounded-3xl overflow-hidden border border-[hsl(350,30%,92%)] hover-lift animate-slide-up"
+            className="group bg-white rounded-3xl overflow-hidden border border-[hsl(100,15%,88%)] hover-lift animate-slide-up"
             style={{ animationDelay: `${i * 0.08}s`, opacity: 0 }}
           >
             <div className="relative aspect-square overflow-hidden">
@@ -74,7 +73,7 @@ export default function CatalogPage({ onAddToCart }: CatalogPageProps) {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                <span className="text-[hsl(355,65%,55%)] text-xs">★</span>
+                <span className="text-[hsl(4,72%,50%)] text-xs">★</span>
                 <span className="font-body text-xs font-medium text-foreground">{item.rating}</span>
                 <span className="font-body text-xs text-foreground/40">({item.reviews})</span>
               </div>
@@ -82,21 +81,21 @@ export default function CatalogPage({ onAddToCart }: CatalogPageProps) {
 
             <div className="p-5">
               <div className="mb-1">
-                <span className="font-body text-xs text-[hsl(355,65%,55%)] font-medium">{item.category}</span>
+                <span className="font-body text-xs text-[hsl(130,35%,32%)] font-medium">{item.category}</span>
               </div>
               <h3 className="font-display text-xl font-light text-foreground mb-1">{item.name}</h3>
               <p className="font-body text-xs text-foreground/50 mb-4">{item.desc}</p>
 
               <div className="flex items-center justify-between">
-                <span className="font-body text-lg font-semibold text-[hsl(355,65%,50%)]">
+                <span className="font-body text-lg font-semibold text-[hsl(4,72%,48%)]">
                   {item.price.toLocaleString('ru-RU')} ₽
                 </span>
                 <button
                   onClick={() => handleAdd(item)}
                   className={`flex items-center gap-1.5 font-body text-sm font-medium px-4 py-2 rounded-full transition-all duration-300
                     ${added.includes(item.id)
-                      ? 'bg-green-50 text-green-600'
-                      : 'bg-[hsl(350,50%,95%)] text-[hsl(355,65%,45%)] hover:bg-[hsl(355,65%,55%)] hover:text-white'
+                      ? 'bg-[hsl(120,30%,90%)] text-[hsl(130,40%,30%)]'
+                      : 'bg-[hsl(120,18%,91%)] text-[hsl(130,35%,28%)] hover:bg-[hsl(4,72%,50%)] hover:text-white'
                     }`}
                 >
                   <Icon name={added.includes(item.id) ? 'Check' : 'ShoppingBag'} size={14} />

@@ -4,43 +4,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 10 15% 18%;
+    /* Фон — тёплый кремовый, как берёзовая кора */
+    --background: 40 25% 97%;
+    --foreground: 130 20% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 10 15% 18%;
+    --card: 40 20% 99%;
+    --card-foreground: 130 20% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 10 15% 18%;
+    --popover: 40 20% 99%;
+    --popover-foreground: 130 20% 12%;
 
-    --primary: 355 65% 55%;
+    /* Основной акцент — красный мухомор */
+    --primary: 4 72% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 350 40% 95%;
-    --secondary-foreground: 10 15% 18%;
+    /* Вторичный — лесной зелёный светлый */
+    --secondary: 130 25% 92%;
+    --secondary-foreground: 130 30% 20%;
 
-    --muted: 350 20% 96%;
-    --muted-foreground: 10 10% 50%;
+    --muted: 100 12% 93%;
+    --muted-foreground: 120 10% 45%;
 
-    --accent: 350 50% 90%;
-    --accent-foreground: 355 65% 40%;
+    --accent: 120 20% 88%;
+    --accent-foreground: 130 35% 22%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 350 30% 88%;
-    --input: 350 30% 88%;
-    --ring: 355 65% 55%;
+    --border: 100 15% 85%;
+    --input: 100 15% 85%;
+    --ring: 4 72% 50%;
 
     --radius: 1rem;
 
-    /* Custom brand colors */
-    --mushroom-red: 355 65% 55%;
-    --mushroom-light: 350 50% 96%;
-    --mushroom-cream: 35 40% 96%;
-    --mushroom-dot: 0 0% 100%;
-    --mushroom-dark: 10 15% 18%;
-    --mushroom-pink: 350 60% 88%;
+    /* Кастомные цвета бренда */
+    --forest-green: 130 35% 30%;
+    --forest-light: 120 20% 92%;
+    --forest-mid: 125 22% 85%;
+    --mushroom-red: 4 72% 50%;
+    --mushroom-red-light: 4 60% 94%;
+    --mushroom-red-mid: 4 55% 85%;
+    --bark-cream: 38 30% 94%;
+    --bark-dark: 30 25% 20%;
+    --moss: 140 30% 38%;
   }
 }
 
@@ -69,18 +75,6 @@
 
   .font-body {
     font-family: "Golos Text", sans-serif;
-  }
-
-  .text-mushroom-red {
-    color: hsl(var(--mushroom-red));
-  }
-
-  .bg-mushroom-light {
-    background-color: hsl(var(--mushroom-light));
-  }
-
-  .bg-mushroom-cream {
-    background-color: hsl(var(--mushroom-cream));
   }
 
   .animate-fade-in {
@@ -149,39 +143,42 @@
 
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(200, 70, 80, 0.15);
+    box-shadow: 0 12px 40px rgba(60, 100, 55, 0.12);
   }
 
+  /* Белые точки мухомора на зелёном */
   .dot-pattern {
     background-image: radial-gradient(
       circle,
-      hsl(var(--mushroom-pink)) 2px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 2.5px,
+      transparent 2.5px
     );
     background-size: 28px 28px;
   }
 
-  .mushroom-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(350, 60%, 96%) 0%,
-      hsl(0, 0%, 100%) 50%,
-      hsl(35, 40%, 97%) 100%
-    );
-  }
-
+  /* Hero: лесной рассвет */
   .hero-gradient {
     background: linear-gradient(
       160deg,
-      hsl(350, 70%, 94%) 0%,
-      hsl(355, 50%, 98%) 40%,
-      hsl(35, 40%, 96%) 100%
+      hsl(115, 22%, 90%) 0%,
+      hsl(38, 28%, 95%) 45%,
+      hsl(100, 15%, 92%) 100%
     );
   }
 
+  /* Секции с лесным фоном */
+  .bg-mushroom-light {
+    background-color: hsl(120, 18%, 93%);
+  }
+
+  .bg-mushroom-cream {
+    background-color: hsl(38, 28%, 95%);
+  }
+
+  /* Навбар — кремовый с зеленоватым оттенком */
   .nav-blur {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    background: rgba(255, 250, 250, 0.85);
+    background: rgba(247, 246, 240, 0.88);
   }
 }
